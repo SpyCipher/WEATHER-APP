@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+
+    <!-- GOOGLE ICONS -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    
+    <title>Weather App | Sunny Kumar Sharma</title>
+</head>
+<body>
+
+    <!-- SEARCHBAR  -->
+
+    <header class="searchBar">
+        <span class="material-symbols-outlined">location_on</span>
+        <input id="city-input" class="city-input" type="text" placeholder="Enter City Name">
+        <button id="searchbtn" class="searchbtn">
+            <span class="material-symbols-outlined">search</span>
+        </button>            
+    </header>
+
+    <!-- WEATHER DISPLAY -->
+
+    <main>
+        <section id="weather-info" class="weather-container" style="display: none;">
+
+            <!-- TODAY WEATHER INFORMATION -->
+
+            <div class="weather-info">
+                <div class="location-date">
+                    <div class="location">
+                        <span class="material-symbols-outlined">location_on</span>
+                        <h4 id="city-name">Lucknow</h4>
+                    </div>
+                    <h5 id="current-date" class="regular-txt">Fri, 13 Sep</h5>
+                </div>
+
+                <div class="weather-summary">
+                    <img src="assets/svg/clouds.svg" id="weather-summary-img" class="weather-summary-img">
+                    <div class="weather-summary-info">
+                        <h1 id="temp-txt">32 °C</h1>
+                        <h3 id="condition-txt" class="regular-txt">Clouds</h3>
+                    </div>
+                </div>
+
+                <div class="empty"></div>
+
+                <div class="weather-condition1">
+                    <div class="condition-item">
+                        <div class="forecast-header">
+                            <span class="material-symbols-outlined">
+                                thermostat
+                            </span>
+                            <h5 class="regular-txt">FEELS LIKE</h5>
+                        </div>
+                        <h5 id="feels-temp-txt" class="value-txt">82%</h5>
+                    </div>
+
+                    <div class="condition-item">
+                        <div class="forecast-header">
+                            <span class="material-symbols-outlined">
+                                water_drop
+                            </span> 
+                            <h5 class="regular-txt">PRECIPITATION</h5>
+                        </div>
+                        <h5 id="precipitation-txt" class="value-txt">2.3"</h5>
+                    </div>
+                </div>
+                
+                <div class="weather-condition2">
+                    <div class="condition-item">
+                        <div class="forecast-header">
+                            <span class="material-symbols-outlined">
+                                visibility
+                            </span>
+                            <h5 class="regular-txt">VISIBILITY</h5>
+                        </div>
+                        <h5 id="visibility-txt" class="value-txt">6 km</h5>
+                    </div>
+
+                    <div class="condition-item">
+                        <div class="forecast-header">
+                            <span class="material-symbols-outlined">
+                                humidity_percentage
+                            </span>
+                            <h5 class="regular-txt">HUMIDITY</h5>
+                        </div>
+                        <h5 id="humidity-txt" class="value-txt">82%</h5>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hourly Weather Information -->
+
+            <div class="hourly-forecast">
+                <div class="forecast-header">
+                    <span class="material-symbols-outlined">
+                        schedule
+                    </span>
+                    <h5>HOURLY FORECAST</h5>
+                </div>
+                <div id="hourly-forecast-container" class="forecast-content">
+                    <div class="hourly-forecast-item">
+                        <h5 class="hour-forecast-time">00:00</h5>
+                        <h5 class="hour-forecast-temp">32&deg;C</h5>
+                        <img src="assets/svg/rain.svg" class="hour-forecast-img">
+                    </div>
+
+                    <div class="hourly-forecast-item">
+                        <h5 class="hour-forecast-time">03:00</h5>
+                        <h5 class="hour-forecast-temp">32&deg;C</h5>
+                        <img src="assets/svg/rain.svg" class="hour-forecast-img">
+                    </div>
+
+                    <div class="hourly-forecast-item">
+                        <h5 class="hour-forecast-time">06:00</h5>
+                        <h5 class="hour-forecast-temp">32&deg;C</h5>
+                        <img src="assets/svg/rain.svg" class="hour-forecast-img">
+                    </div>
+
+                    <div class="hourly-forecast-item">
+                        <h5 class="hour-forecast-time">09:00</h5>
+                        <h5 class="hour-forecast-temp">32&deg;C</h5>
+                        <img src="assets/svg/rain.svg" class="hour-forecast-img">
+                    </div>
+
+                    <div class="hourly-forecast-item">
+                        <h5 class="hour-forecast-time">12:00</h5>
+                        <h5 class="hour-forecast-temp">32&deg;C</h5>
+                        <img src="assets/svg/rain.svg" class="hour-forecast-img">
+                    </div>
+
+                    <div class="hourly-forecast-item">
+                        <h5 class="hour-forecast-time">15:00</h5>
+                        <h5 class="hour-forecast-temp">32&deg;C</h5>
+                        <img src="assets/svg/rain.svg" class="hour-forecast-img">
+                    </div>
+
+                    <div class="hourly-forecast-item">
+                        <h5 class="hour-forecast-time">18:00</h5>
+                        <h5 class="hour-forecast-temp">32&deg;C</h5>
+                        <img src="assets/svg/rain.svg" class="hour-forecast-img">
+                    </div>
+
+                    <div class="hourly-forecast-item">
+                        <h5 class="hour-forecast-time">21:00</h5>
+                        <h5 class="hour-forecast-temp">32&deg;C</h5>
+                        <img src="assets/svg/rain.svg" class="hour-forecast-img">
+                    </div>
+                </div>
+            </div>
+
+            <!-- 5-Days Weather Information -->
+
+            <div class="days-forecast">
+                <div class="forecast-header">
+                    <span class="material-symbols-outlined">
+                        schedule
+                    </span>
+                    <h5>5-DAY FORECAST</h5>
+                </div>
+                <div id="days-forecast-container" class="forecast-content">
+                    <div class="days-forecast-item">
+                        <h5 class="days-forecast-day">Sat</h5>
+                        <h5 class="days-forecast-date">18/9</h5>
+                        <h5 class="days-forecast-temp">32&deg;C</h5>
+                        <img src="assets/svg/rain.svg" class="days-forecast-img">
+                    </div>
+
+                    <div class="days-forecast-item">
+                        <h5 class="days-forecast-day">Sun</h5>
+                        <h5 class="days-forecast-date">18/9</h5>
+                        <h5 class="days-forecast-temp">32&deg;C</h5>
+                        <img src="assets/svg/rain.svg" class="days-forecast-img">
+                    </div>
+
+                    <div class="days-forecast-item">
+                        <h5 class="days-forecast-day">Mon</h5>
+                        <h5 class="days-forecast-date">18/9</h5>
+                        <h5 class="days-forecast-temp">32&deg;C</h5>
+                        <img src="assets/svg/rain.svg" class="days-forecast-img">
+                    </div>
+
+                    <div class="days-forecast-item">
+                        <h5 class="days-forecast-day">Tue</h5>
+                        <h5 class="days-forecast-date">18/9</h5>
+                        <h5 class="days-forecast-temp">32&deg;C</h5>
+                        <img src="assets/svg/rain.svg" class="days-forecast-img">
+                    </div>
+
+                    <div class="days-forecast-item">
+                        <h5 class="days-forecast-day">Wed</h5>
+                        <h5 class="days-forecast-date">18/9</h5>
+                        <h5 class="days-forecast-temp">32&deg;C</h5>
+                        <img src="assets/svg/rain.svg" class="days-forecast-img">
+                    </div>
+                </div>
+            </div>
+
+            <!-- sunrise-sunset INFORMATION -->
+
+            <div class="sunrise-sunset">
+                <div class="forecast-header">
+                    <span class="material-symbols-outlined">
+                        schedule
+                    </span>
+                    <h5>SUNRISE &amp; SUNSET</h5>
+                </div>
+                <div class="sunrise-sunset-content">
+                    <div class="sunrise-sunset-item">
+                        <h3 id="sunrise-time" class="sunrise-time">05:51:00</h3>
+                        <h4>Sunrise</h4>
+                    </div>
+
+                    <div class="sunrise-sunset-item">
+                        <h3 id="sunset-time" class="sunset-time">18:12:00</h3>
+                        <h4>Sunset</h4>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- WIND INFORMATION -->
+
+            <div class="wind">
+                <div class="forecast-header">
+                    <span class="material-symbols-outlined">
+                        schedule
+                    </span>
+                    <h5>WIND SPEED</h5>
+                </div>
+                <h3 id="wind-speed" class="wind-speed">6 m/s</h3>
+            </div>
+        </section>
+
+        <!-- SEARCH CITY SECTION -->
+
+        <section id="search-city" class="section-message">
+            <img src="assets/img/search-city.png">
+            <div class="section-message-info">
+                <h1>Search City</h1>
+                <h4 class="regular-txt">Find out the weather condition of the city</h4>
+            </div>
+        </section>
+
+        <!-- NOT FOUND SECTION -->
+
+        <section id="not-found" class="section-message" style="display: none;">
+            <img src="assets/img/not-found.png">
+            <div class="section-message-info">
+                <h1>City Not Found</h1>
+                <h4 class="regular-txt">Find out the weather condition of the city</h4>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+
+    <footer class="footer">
+        <div class="footer-text">
+            <p>Copyright &copy; 2024 by Sunny Kumar Sharma | All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js" defer></script>
+</body>
+</html>
